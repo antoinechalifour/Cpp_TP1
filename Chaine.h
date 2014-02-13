@@ -5,6 +5,8 @@ class Chaine{
 
     public:
     Chaine();
+    Chaine(char* str);
+    Chaine(const Chaine& obj);
     ~Chaine();
     unsigned int getSize();
     char* getString();
