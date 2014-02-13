@@ -53,9 +53,13 @@ char* Chaine::getString(){
 
 void Chaine::addString(char* str){
     cout<<"Passage dans addString(char* str)"<<endl;
+    char* tmp = (char*) malloc(size * sizeof(char));
+    strcpy(tmp, string);
     size += strlen(str);
-    string = (char*) realloc(string, (size) + sizeof(char));
+    string = (char*) realloc(string, (size+1) + sizeof(char));
+    strcpy(string, tmp);
     strcat(string, str);
+    free(tmp);
 }
 
 void Chaine::replaceString(char* str){
